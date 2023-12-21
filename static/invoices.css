@@ -1,7 +1,7 @@
 /* Page settings */
 @page {
   size: A4;
-  margin: 2cm; /* Adjust margins as needed */
+  margin: 2cm; 
 }
 
 /* Body styles */
@@ -25,15 +25,15 @@ body {
 /* Table styles */
 table {
   width: 100%;
-  margin: 40px auto; /* Adjust margin for better spacing */
+  margin: 40px auto; 
   border-collapse: collapse;
-  text-align: center; /* Center-align the entire table */
+  text-align: center;
 }
 
 /* Table cell styles */
 table td,
 table thead th {
-  text-align: left; /* Left-align text in table data cells and header cells */
+  text-align: left; 
 }
 
 /* Table header styles */
@@ -46,7 +46,7 @@ table thead th {
 /* General table cell styles */
 table th,
 table td {
-  border: 1px solid rgb(225, 220, 220); /* Light gray border */
+  border: 1px solid rgb(225, 220, 220); 
 }
 
 /* Remove horizontal borders except for the first and last rows */
