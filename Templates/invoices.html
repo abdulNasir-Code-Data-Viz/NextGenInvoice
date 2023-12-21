@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generated Invoices</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='invoices.css') }}">
+</head>
+<body>
+    <h1 class="customised-h1">Generated Invoices</h1>
+
+    {% for invoice in invoices %}
+        {% if loop.first or invoice['Project Name'] != invoices[loop.index0 - 1]['Project Name'] %}
+            <h2 class="customised-h2">Company: {{ invoice['Project Name'] }}</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Employee ID</th>
+                        <th>Number of Hours</th>
+                        <th>Unit Price</th>
+                        <th>Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+        {% endif %}
+
+        <tr>
+            <td>{{ invoice['Employee ID'] }}</td>
+            <td>{{ invoice['Number of Hours'] }}</td>
+            <td>{{ invoice['Unit Price'] }}</td>
+            <td>{{ invoice['Cost'] }}</td>
+        </tr>
+
+        {% if invoice.get('Total Invoice Amount') %}
+            <tr>
+                <td colspan="3">Total Invoice Amount:</td>
+                <td>{{ invoice['Total Invoice Amount'] }}</td>
+            </tr>
+        {% endif %}
+
+        {% if loop.last or invoice['Project Name'] != invoices[loop.index0 + 1]['Project Name'] %}
+                {# Calculate and display total invoice amount for the project #}
+                <tr>
+                    <td colspan="3">Total</td>
+                    <td>{{ invoices | selectattr('Project Name', 'equalto', invoice['Project Name']) | map(attribute='Cost') | sum }}</td>
+                </tr>
+                </tbody>
+            </table>
+        {% endif %}
+    {% endfor %}
+
+</body>
+</html>

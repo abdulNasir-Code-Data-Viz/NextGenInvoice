@@ -1,0 +1,86 @@
+/* Page settings */
+@page {
+  size: A4;
+  margin: 2cm; /* Adjust margins as needed */
+}
+
+/* Body styles */
+body {
+  font-size: 12pt;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Include the Open Sans font using @font-face */
+@font-face {
+  font-family: 'Open Sans';
+  src: url('/static/fonts/OpenSans_SemiCondensed-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Table styles */
+table {
+  width: 100%;
+  margin: 40px auto; /* Adjust margin for better spacing */
+  border-collapse: collapse;
+  text-align: center; /* Center-align the entire table */
+}
+
+/* Table cell styles */
+table td,
+table thead th {
+  text-align: left; /* Left-align text in table data cells and header cells */
+}
+
+/* Table header styles */
+table thead th {
+  background-color: rgb(64, 120, 221);
+  color: white;
+  padding: 10px;
+}
+
+/* General table cell styles */
+table th,
+table td {
+  border: 1px solid rgb(225, 220, 220); /* Light gray border */
+}
+
+/* Remove horizontal borders except for the first and last rows */
+table tr:not(:last-child) td {
+  border-top: none;
+  border-bottom: none;
+}
+
+/* Thicker borders for the last row */
+table tr:last-child td {
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  font-weight: bold;
+}
+
+/* Remove right/left borders for ending cells */
+table tbody tr td:last-child,
+table thead tr th:last-child,
+table tbody tr td:first-child,
+table thead tr th:first-child {
+  border-right: none;
+  border-left: none;
+}
+
+/* Customized header styles */
+.customised-h1 {
+  text-align: center;
+  margin-bottom: 1px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 50px; /* Specify the font size */
+}
+
+.customised-h2 {
+  text-align: left;
+  margin-bottom: 1px;
+  font-family: 'Open Sans', sans-serif;
+}

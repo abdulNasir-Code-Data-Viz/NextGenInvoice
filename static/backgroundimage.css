@@ -1,0 +1,16 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url("bgimg.jpg"); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    background-blend-mode: color-burn;
+  }
+
+  
+  

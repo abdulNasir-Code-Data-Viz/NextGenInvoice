@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>NextGen Timesheet Uploader</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='backgroundimage.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='fonts/open-sans.css') }}">
+</head>
+<body>
+    <h1 class="custom-h1">NextGen Associates</h1>
+    <h2 class="custom-h2">Invoice Generator</h2>
+    <h3 class="custom-h3">Upload Timesheet to generate invoices</h3>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    {% set message_class = 'error-message' if 'error' in message else 'success-message' %}
+                    <li class="{{ message_class }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <form action="/" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".csv" required>
+        <button type="submit">Upload</button>
+    </form>
+
+    <a href="/generate_invoices">
+        <button>Generate Invoices</button>
+    </a>
+</body>
+</html>
