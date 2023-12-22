@@ -1,4 +1,4 @@
-Law Firm Invoice Generator
+Law Firm(NextGen Associates) Invoice Generator
 
 The task is to develop a web application for a leading law firm in Ghana to streamline their revenue collection process. The firm operates on a billable rate system where lawyers submit their timesheets, and invoices are generated based on the total hours worked.
 Problem Statement
